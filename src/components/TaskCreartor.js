@@ -6,7 +6,7 @@ function TaskCreator(props) {
 
   const handleCreate = () => {
    
-    if (!title.trim()) return null;
+    if (!title) return null;
     props.onCreateTask(title);
     setTitle("");
 

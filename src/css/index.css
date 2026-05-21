@@ -1,0 +1,10 @@
+@charset "utf-8";
+@import './reset.css'; 
+
+.complete-btn-green {
+  background-color: rgb(31, 245, 31);
+}
+
+.complete-btn-red {
+  background-color: rgb(249, 39, 39);
+}

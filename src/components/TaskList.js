@@ -1,13 +1,11 @@
 import TaskCard from "./TaskCard";
 
+
 function TaskList (props) {
   return (
     <ul>
       {props.tasks.map((task) => 
-        <li key={task.id}>
-          {task.title}
-          {task.creationDate}
-        </li>
+        <TaskCard key={task.id} task={task} onToggleComplete={props.onToggleComplete} onEditTask={props.onEditTask} onRemoveTask={props.onRemoveTask}/>
       )}
     </ul>
   )
