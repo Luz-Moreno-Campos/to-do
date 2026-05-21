@@ -34,8 +34,10 @@ function reducer(state, action) {
   }
 }
 
+
 function App() {
   const [tasks, dispatch] = useReducer(reducer, []);
+ 
 
   useEffect(() => {
     const savedTaskList = localStorage.getItem("tasks");
@@ -49,11 +51,32 @@ function App() {
   }, [tasks]);
 
 
+  const handleCreateTask = (title) => {
+    const now = new Date().toLocaleString();
+    dispatch({ type: "create-task", title, date: now });
+  };
+
+
+  const handleEditTask = (id, newTitle) => {
+    const now = new Date().toLocaleString();
+    dispatch({ type: "edit-task", id, title: newTitle, date: now });
+    
+  };
+
+  const handleToggleComplete = (id) => {
+    dispatch({ type: "toggle-complete", id });
+  };
+
+  const handleRemoveTask = (id) => {
+    dispatch({ type: "remove-task", id });
+  };
+
+
 
   return (
     <div className="app-container">
-      <TaskCreator />
-      <TaskList />
+      <TaskCreator onCreateTask={handleCreateTask} onEditTask={handleEditTask} />
+      <TaskList tasks={tasks} onToggleComplete={handleToggleComplete} onRemoveTask={handleRemoveTask} onEditTask={handleEditTask} />
     </div>
   );
 }
