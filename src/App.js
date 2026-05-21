@@ -34,7 +34,6 @@ function reducer(state, action) {
   }
 }
 
-
 function App() {
   const [tasks, dispatch] = useReducer(reducer, []);
  
@@ -70,7 +69,6 @@ function App() {
   const handleRemoveTask = (id) => {
     dispatch({ type: "remove-task", id });
   };
-
 
 
   return (

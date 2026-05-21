@@ -1,9 +1,15 @@
 import TaskCard from "./TaskCard";
 
-function TaskList () {
+function TaskList (props) {
   return (
-    <>
-    </>
+    <ul>
+      {props.tasks.map((task) => 
+        <li key={task.id}>
+          {task.title}
+          {task.creationDate}
+        </li>
+      )}
+    </ul>
   )
 }
 
