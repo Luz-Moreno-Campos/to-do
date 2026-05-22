@@ -40,7 +40,7 @@ h2 {
 .input-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom:10px;
   gap: 30px;
 
 }
@@ -76,6 +76,21 @@ input::placeholder {
     0 0 8px rgba(255, 140, 0, 0.6),
     0 0 12px rgba(255, 140, 0, 0.4);
 }
+
+
+.error-container{
+  height: 60px;
+}
+
+.error-message {
+  color: rgb(255, 80, 80);
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+  padding-left: 30px;
+
+}
+
+
 
 .complete-btn-green {
   background-color: rgb(31, 245, 31);
