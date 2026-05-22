@@ -1,4 +1,4 @@
-import TaskCreator from "./components/TaskCreartor";
+import TaskCreator from "./components/TaskCreator";
 import TaskList from "./components/TaskList";
 import { useReducer, useState, useEffect } from "react";
 
@@ -37,19 +37,22 @@ function reducer(state, action) {
 function App() {
   const [tasks, dispatch] = useReducer(reducer, []);
   const [editingTask, setEditingTask] = useState(null);
+  const [loadedTasks, setLoadedTasks] = useState(false);
 
- 
+
 
   useEffect(() => {
     const savedTaskList = localStorage.getItem("tasks");
     if (savedTaskList) {
       dispatch({ type: "load-tasks", tasks: JSON.parse(savedTaskList) });
     }
+    setLoadedTasks(true);
   }, []);
 
   useEffect(() => {
+    if (!loadedTasks) return;
     localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
+  }, [tasks, loadedTasks]);
 
 
   const handleCreateTask = (title) => {
@@ -59,14 +62,14 @@ function App() {
 
 
   const handleStartEditingTask = (task) => {
-  setEditingTask(task);
-};
+    setEditingTask(task);
+  };
 
   const handleEditTask = (id, newTitle) => {
     const now = new Date().toLocaleString();
     dispatch({ type: "edit-task", id, title: newTitle, date: now });
     setEditingTask(null);
-    
+
   };
 
   const handleToggleComplete = (id) => {
