@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import taskManagerLogo from "../assets/media/task-manager-logo.png";
 
 function TaskCreator(props) {
 
@@ -27,17 +28,20 @@ function TaskCreator(props) {
 
       props.onCreateTask(title);
       setTitle("");
-      
+
     }
 
   };
 
   return (
-    <section>
-      <h1>Create your task</h1>
-      <input type="text" placeholder="Write your task here" value={title} maxLength={50} onChange={(e) => setTitle(e.target.value)} />
-      <button onClick={handleSubmit}>{isEditing ? "Save changes" : "Create"}</button>
-    </section>
+    <section className="task-creator">
+      <img src={taskManagerLogo} className="logo" alt="Task Manager Logo" />
+       <h2>Create a new task</h2>
+      <div className="input-wrapper">
+        <input type="text" placeholder="Enter your task here" value={title} maxLength={50} onChange={(e) => setTitle(e.target.value)} />
+        <button onClick={handleSubmit}>{isEditing ? "Save changes" : "Create"}</button>
+      </div>
+    </section >
   );
 }
 

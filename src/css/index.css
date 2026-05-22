@@ -1,10 +1,44 @@
 @charset "utf-8";
 @import './reset.css'; 
 
+
+.app-container {
+  width: min(100% -30px, 1080px);
+  height: 100svh;
+  background-color: black;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  
+
+}
+
+
+.logo {
+  height: 150px;
+  margin-top:50px;
+}
+
+h2 {
+
+  text-align: center;
+  font-weight: 600;
+  font-size: 3.2rem;
+  padding: 20px;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+  gap:20px;
+}
+
 .complete-btn-green {
   background-color: rgb(31, 245, 31);
 }
 
 .complete-btn-red {
-  background-color: rgb(249, 39, 39);
+background-color: rgb(255, 111, 0)
 }
