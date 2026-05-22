@@ -7,7 +7,7 @@ function TaskCard(props) {
         className={props.task.completed ? "complete-btn-green" : "complete-btn-red"}
         onClick={() => props.onToggleComplete(props.task.id)}><IoCheckmarkCircleOutline />
       </button>
-      <button className="edit-btn" onClick={() => props.onEditTask(props.task.id)}><IoPencil /></button>
+      <button className="edit-btn" onClick={() => props.onEditTask(props.task)}><IoPencil /></button>
       <button className="remove-btn" onClick={() => props.onRemoveTask(props.task.id)}><IoTrash /></button>
     </li>
   );

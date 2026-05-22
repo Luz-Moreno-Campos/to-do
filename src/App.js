@@ -36,6 +36,8 @@ function reducer(state, action) {
 
 function App() {
   const [tasks, dispatch] = useReducer(reducer, []);
+  const [editingTask, setEditingTask] = useState(null);
+
  
 
   useEffect(() => {
@@ -56,9 +58,14 @@ function App() {
   };
 
 
+  const handleStartEditingTask = (task) => {
+  setEditingTask(task);
+};
+
   const handleEditTask = (id, newTitle) => {
     const now = new Date().toLocaleString();
     dispatch({ type: "edit-task", id, title: newTitle, date: now });
+    setEditingTask(null);
     
   };
 
@@ -73,8 +80,8 @@ function App() {
 
   return (
     <div className="app-container">
-      <TaskCreator onCreateTask={handleCreateTask} onEditTask={handleEditTask} />
-      <TaskList tasks={tasks} onToggleComplete={handleToggleComplete} onRemoveTask={handleRemoveTask} onEditTask={handleEditTask} />
+      <TaskCreator onCreateTask={handleCreateTask} editingTask={editingTask} onEditTask={handleEditTask} />
+      <TaskList tasks={tasks} onToggleComplete={handleToggleComplete} onRemoveTask={handleRemoveTask} onEditTask={handleStartEditingTask} />
     </div>
   );
 }

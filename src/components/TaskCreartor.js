@@ -1,22 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function TaskCreator(props) {
 
   const [title, setTitle] = useState("");
 
-  const handleCreate = () => {
-   
+  useEffect(() => {
+    if (props.editingTask && props.editingTask.title !== title) {
+      setTitle(props.editingTask.title);
+    }
+  }, [props.editingTask])
+
+
+  const isEditing = props.editingTask ? true : false;
+
+
+  const handleSubmit = () => {
+
     if (!title) return null;
-    props.onCreateTask(title);
-    setTitle("");
+
+    if (isEditing) {
+
+      props.onEditTask(props.editingTask.id, title)
+
+    } else {
+
+      props.onCreateTask(title);
+      setTitle("");
+      
+    }
 
   };
 
   return (
     <section>
       <h1>Create your task</h1>
-      <input type="text" placeholder="Write your task here" value={title} maxLength={50} onChange={(e) => setTitle(e.target.value)}/>
-      <button onClick={handleCreate}>Create</button>
+      <input type="text" placeholder="Write your task here" value={title} maxLength={50} onChange={(e) => setTitle(e.target.value)} />
+      <button onClick={handleSubmit}>{isEditing ? "Save changes" : "Create"}</button>
     </section>
   );
 }
