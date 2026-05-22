@@ -36,10 +36,11 @@ function TaskCreator(props) {
   return (
     <section className="task-creator">
       <img src={taskManagerLogo} className="logo" alt="Task Manager Logo" />
+      <p className="slogan">Your tasks organized, your day simplified.</p>
        <h2>Create a new task</h2>
       <div className="input-wrapper">
         <input type="text" placeholder="Enter your task here" value={title} maxLength={50} onChange={(e) => setTitle(e.target.value)} />
-        <button onClick={handleSubmit}>{isEditing ? "Save changes" : "Create"}</button>
+        <button className="creator-btn" onClick={handleSubmit}>{isEditing ? "Save" : "Create"}</button>
       </div>
     </section >
   );

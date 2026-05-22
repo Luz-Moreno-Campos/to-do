@@ -1,44 +1,87 @@
 @charset "utf-8";
-@import './reset.css'; 
+@import './reset.css';
 
 
 .app-container {
   width: min(100% -30px, 1080px);
-  height: 100svh;
+  min-height: 100svh;
   background-color: black;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
-  
+  color: rgb(235, 233, 233);
+  font-family: "Inter", sans-serif;
+
 
 }
 
 
 .logo {
   height: 150px;
-  margin-top:50px;
+  margin-top: 50px;
 }
 
 h2 {
 
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 3.2rem;
   padding: 20px;
+}
+
+.slogan {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 500;
+  font-style: italic;
+  color: rgb(196, 195, 195);
 }
 
 .input-wrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 80px;
-  gap:20px;
+  gap: 30px;
+
+}
+
+input {
+
+  width: 320px;
+  padding-left: 10px;
+  border-radius: 5px;
+  height: 35px;
+  background-color: rgb(205, 204, 204);
+
+}
+
+input::placeholder {
+  color: rgb(72, 72, 72);
+}
+
+.creator-btn {
+  border-radius: 5px;
+  padding: 3px 10px;
+  font-weight: 700;
+  width: 70px;
+  text-align: center;
+  transition: 01s ease-in-out;
+  color: rgb(45, 44, 44);
+  text-shadow: 0 2px 4px rgba( 0, 0, 0, 0.2);
+}
+
+.creator-btn:hover {
+    box-shadow:
+    0 0 4px rgba(255, 140, 0, 0.8),
+    0 0 8px rgba(255, 140, 0, 0.6),
+    0 0 12px rgba(255, 140, 0, 0.4);
 }
 
 .complete-btn-green {
   background-color: rgb(31, 245, 31);
 }
 
-.complete-btn-red {
-background-color: rgb(255, 111, 0)
+.complete-btn-red,
+.creator-btn {
+  background-color: rgb(255, 111, 0)
 }
