@@ -60,7 +60,6 @@ function App() {
     dispatch({ type: "create-task", title, date: now });
   };
 
-
   const handleStartEditingTask = (task) => {
     setEditingTask(task);
   };
