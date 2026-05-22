@@ -41,7 +41,7 @@ function TaskCreator(props) {
       <h2>Create a new task</h2>
       <div className="input-wrapper">
         <input
-          type="text" placeholder="Enter your task here" value={title} maxLength={50}
+          type="text" placeholder="Enter your task here" value={title} maxLength={60}
           onChange={(e) => {
             setTitle(e.target.value);
             setError("");

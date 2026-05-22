@@ -25,8 +25,10 @@ h2 {
 
   text-align: center;
   font-weight: 500;
-  font-size: 3.2rem;
+  font-size: 3rem;
   padding: 20px;
+  margin-top:20px;
+   color: rgb(164, 163, 163);
 }
 
 .slogan {
@@ -34,13 +36,13 @@ h2 {
   font-size: 2.2rem;
   font-weight: 500;
   font-style: italic;
-  color: rgb(196, 195, 195);
+  color: rgb(255, 111, 0);
 }
 
 .input-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   gap: 30px;
 
 }
@@ -52,6 +54,7 @@ input {
   border-radius: 5px;
   height: 35px;
   background-color: rgb(205, 204, 204);
+  
 
 }
 
@@ -67,18 +70,18 @@ input::placeholder {
   text-align: center;
   transition: 01s ease-in-out;
   color: rgb(45, 44, 44);
-  text-shadow: 0 2px 4px rgba( 0, 0, 0, 0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .creator-btn:hover {
-    box-shadow:
+  box-shadow:
     0 0 4px rgba(255, 140, 0, 0.8),
     0 0 8px rgba(255, 140, 0, 0.6),
     0 0 12px rgba(255, 140, 0, 0.4);
 }
 
 
-.error-container{
+.error-container {
   height: 60px;
 }
 
@@ -91,12 +94,49 @@ input::placeholder {
 }
 
 
-
 .complete-btn-green {
   background-color: rgb(31, 245, 31);
+  
 }
 
 .complete-btn-red,
 .creator-btn {
-  background-color: rgb(255, 111, 0)
+  background-color: rgb(255, 111, 0);
+}
+
+
+.complete-btn-red,
+.complete-btn-green,
+.edit-btn,
+.remove-btn {
+  padding: 5px;
+  border-radius: 50px;
+}
+
+
+.task-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 3px solid grey;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.task-completed {
+    border: 3px solid rgb(31, 245, 31);
+
+
+}
+
+.card-title {
+  width: 900px;
+  font-size:1.7rem ;
+}
+
+.card-date {
+  width: 300px;
+  font-style: italic;
+  font-size: 1.4rem;
 }
