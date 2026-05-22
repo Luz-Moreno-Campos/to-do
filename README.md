@@ -62,7 +62,7 @@ On page load, the app restores tasks automatically.
 
 ## 🌐 Live Demo
 
-👉 You can view a live demo here :  
+👉 You can view a live demo here:  https://luz-moreno-campos.github.io/to-do/
 
 
 
