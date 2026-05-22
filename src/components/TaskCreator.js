@@ -21,6 +21,7 @@ function TaskCreator(props) {
     if (isEditing) {
 
       props.onEditTask(props.editingTask.id, title)
+      setTitle("");
 
     } else {
 
